@@ -1,3 +1,6 @@
 ---
 Name: goldfinch-component-services
 ---
+Goldfinch\Component\Services\Admin\ServicesAdmin:
+  extensions:
+    - Goldfinch\Helpers\Extensions\BlocksAdminExtension
