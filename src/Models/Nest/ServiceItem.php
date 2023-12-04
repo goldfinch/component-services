@@ -2,13 +2,15 @@
 
 namespace Goldfinch\Component\Services\Models\Nest;
 
-use Goldfinch\Component\Services\Pages\Nest\Services;
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TextField;
+use SilverStripe\Control\Director;
 use SilverStripe\TagField\TagField;
-use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 use Goldfinch\Nest\Models\NestedObject;
+use Goldfinch\Component\Services\Admin\ServicesAdmin;
+use Goldfinch\Component\Services\Pages\Nest\Services;
 use Goldfinch\FocusPointExtra\Forms\UploadFieldWithExtra;
+use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 
 class ServiceItem extends NestedObject
 {
@@ -85,6 +87,29 @@ class ServiceItem extends NestedObject
         );
 
         return $fields;
+    }
+
+    // TODO: check if SortOrder exists
+    public function nextItem()
+    {
+        return ServiceItem::get()->filter(['SortOrder:LessThan' => $this->SortOrder])->Sort('SortOrder DESC')->first();
+    }
+
+    // TODO: check if SortOrder exists
+    public function previousItem()
+    {
+        return ServiceItem::get()->filter(['SortOrder:GreaterThan' => $this->SortOrder])->first();
+    }
+
+    public function OtherItems()
+    {
+        return ServiceItem::get()->filter('ID:not', $this->ID)->limit(6);
+    }
+
+    public function CMSEditLink()
+    {
+        $admin = new ServicesAdmin;
+        return Director::absoluteBaseURL() . '/' . $admin->getCMSEditLinkForManagedDataObject($this);
     }
 
     // public function validate()
