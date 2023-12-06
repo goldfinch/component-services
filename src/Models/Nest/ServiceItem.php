@@ -23,7 +23,9 @@ class ServiceItem extends NestedObject
     private static $singular_name = 'service';
     private static $plural_name = 'services';
 
-    private static $db = [];
+    private static $db = [
+        'SortOrder' => 'Int',
+    ];
 
     private static $many_many = [
         'Categories' => ServiceCategory::class,
@@ -52,7 +54,7 @@ class ServiceItem extends NestedObject
     // private static $belongs_to = [];
     // private static $has_many = [];
     // private static $belongs_many_many = [];
-    // private static $default_sort = null;
+    private static $default_sort = 'SortOrder';
     // private static $indexes = null;
     // private static $owns = [];
     // private static $casting = [];
@@ -75,6 +77,10 @@ class ServiceItem extends NestedObject
     {
         $fields = parent::getCMSFields();
 
+        $fields->removeByName([
+          'SortOrder',
+        ]);
+
         $fields->addFieldsToTab(
             'Root.Main',
             [
@@ -89,19 +95,17 @@ class ServiceItem extends NestedObject
         return $fields;
     }
 
-    // TODO: check if SortOrder exists
-    public function nextItem()
+    public function getNextItem()
     {
         return ServiceItem::get()->filter(['SortOrder:LessThan' => $this->SortOrder])->Sort('SortOrder DESC')->first();
     }
 
-    // TODO: check if SortOrder exists
-    public function previousItem()
+    public function getPreviousItem()
     {
         return ServiceItem::get()->filter(['SortOrder:GreaterThan' => $this->SortOrder])->first();
     }
 
-    public function OtherItems()
+    public function getOtherItems()
     {
         return ServiceItem::get()->filter('ID:not', $this->ID)->limit(6);
     }
