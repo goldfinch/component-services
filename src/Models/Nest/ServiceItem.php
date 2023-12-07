@@ -23,9 +23,7 @@ class ServiceItem extends NestedObject
     private static $singular_name = 'service';
     private static $plural_name = 'services';
 
-    private static $db = [
-        'SortOrder' => 'Int',
-    ];
+    private static $db = [];
 
     private static $many_many = [
         'Categories' => ServiceCategory::class,
@@ -54,7 +52,7 @@ class ServiceItem extends NestedObject
     // private static $belongs_to = [];
     // private static $has_many = [];
     // private static $belongs_many_many = [];
-    private static $default_sort = 'SortOrder';
+    // private static $default_sort = null;
     // private static $indexes = null;
     // private static $owns = [];
     // private static $casting = [];
