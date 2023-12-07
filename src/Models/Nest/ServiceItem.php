@@ -75,10 +75,6 @@ class ServiceItem extends NestedObject
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName([
-          'SortOrder',
-        ]);
-
         $fields->addFieldsToTab(
             'Root.Main',
             [
