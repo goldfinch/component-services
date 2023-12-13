@@ -16,7 +16,7 @@ class ServicesAdmin extends ModelAdmin
 
     private static $url_segment = 'services';
     private static $menu_title = 'Services';
-    private static $menu_icon_class = 'bi-briefcase-fill';
+    private static $menu_icon_class = 'font-icon-block-bookmark';
     // private static $menu_priority = -0.5;
 
     private static $managed_models = [

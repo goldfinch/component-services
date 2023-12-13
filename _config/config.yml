@@ -4,3 +4,12 @@ Name: goldfinch-component-services
 Goldfinch\Component\Services\Admin\ServicesAdmin:
   extensions:
     - Goldfinch\Helpers\Extensions\BlocksAdminExtension
+
+---
+Name: goldfinch-component-services-icon
+Only:
+  moduleexists: 'goldfinch/enchantment'
+---
+
+Goldfinch\Component\Services\Admin\ServicesAdmin:
+  menu_icon_class: 'bi-briefcase-fill'
