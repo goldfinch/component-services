@@ -13,3 +13,9 @@ Only:
 
 Goldfinch\Component\Services\Admin\ServicesAdmin:
   menu_icon_class: 'bi-briefcase-fill'
+
+Goldfinch\Component\Services\Pages\Nest\Services:
+  icon_class: 'bi-briefcase-fill'
+
+Goldfinch\Component\Services\Blocks\ServicesBlock:
+  icon: 'bi-briefcase-fill'

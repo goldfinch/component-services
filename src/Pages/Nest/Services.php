@@ -10,5 +10,5 @@ class Services extends Nest
     private static $table_name = 'Services';
     private static $controller_name = ServicesController::class;
 
-    private static $icon_class = 'bi-briefcase-fill';
+    private static $icon_class = 'font-icon-block-bookmark';
 }
