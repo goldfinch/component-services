@@ -86,6 +86,8 @@ class ServiceItem extends NestedObject
             ]
         );
 
+        $fields->dataFieldByName('Image')->setFolderName('services');
+
         return $fields;
     }
 
