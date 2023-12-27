@@ -9,7 +9,7 @@ use SilverStripe\TagField\TagField;
 use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Component\Services\Admin\ServicesAdmin;
 use Goldfinch\Component\Services\Pages\Nest\Services;
-use Goldfinch\FocusPointExtra\Forms\UploadFieldWithExtra;
+use Goldfinch\ImageEditor\Forms\EditableUploadField;
 use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 
 class ServiceItem extends NestedObject
@@ -78,7 +78,7 @@ class ServiceItem extends NestedObject
         $fields->addFieldsToTab(
             'Root.Main',
             [
-                ...UploadFieldWithExtra::create('Image', 'Image', $fields, $this)->getFields(),
+                ...EditableUploadField::create('Image', 'Image', $fields, $this)->getFields(),
                 ...[
                     TextField::create('Title', 'Title'),
                     TagField::create('Categories', 'Categories', ServiceCategory::get())
