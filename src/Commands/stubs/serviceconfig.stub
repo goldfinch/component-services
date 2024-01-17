@@ -1,0 +1,19 @@
+---
+Name: app-{{ class }}
+After: "goldfinch/component-services"
+---
+Goldfinch\Component\Services\Models\Nest\ServiceItem:
+  extensions:
+    - {{ namespace }}\ServiceItemExtension
+
+Goldfinch\Component\Services\Models\Nest\ServiceCategory:
+  extensions:
+    - {{ namespace }}\ServiceCategoryExtension
+
+Goldfinch\Component\Services\Configs\ServiceConfig:
+  extensions:
+    - {{ namespace }}\ServiceConfigExtension
+
+Goldfinch\Component\Services\Blocks\ServicesBlock:
+  extensions:
+    - {{ namespace }}\ServicesBlockExtension
