@@ -1,7 +1,6 @@
 ---
 Name: goldfinch-component-services-sortable
 ---
-
 Goldfinch\Component\Services\Models\Nest\ServiceItem:
   extensions:
     - Goldfinch\Helpers\Extensions\DataObjectSortable

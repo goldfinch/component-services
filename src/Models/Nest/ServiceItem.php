@@ -39,10 +39,7 @@ class ServiceItem extends NestedObject
         'Image' => Image::class,
     ];
 
-    private static $owns = [
-        'Image',
-        'Categories',
-    ];
+    private static $owns = ['Image', 'Categories'];
 
     private static $summary_fields = [
         'Image.CMSThumbnail' => 'Image',
@@ -65,22 +62,31 @@ class ServiceItem extends NestedObject
 
     public function getNextItem()
     {
-        return ServiceItem::get()->filter(['SortOrder:LessThan' => $this->SortOrder])->Sort('SortOrder DESC')->first();
+        return ServiceItem::get()
+            ->filter(['SortOrder:LessThan' => $this->SortOrder])
+            ->Sort('SortOrder DESC')
+            ->first();
     }
 
     public function getPreviousItem()
     {
-        return ServiceItem::get()->filter(['SortOrder:GreaterThan' => $this->SortOrder])->first();
+        return ServiceItem::get()
+            ->filter(['SortOrder:GreaterThan' => $this->SortOrder])
+            ->first();
     }
 
     public function getOtherItems()
     {
-        return ServiceItem::get()->filter('ID:not', $this->ID)->limit(6);
+        return ServiceItem::get()
+            ->filter('ID:not', $this->ID)
+            ->limit(6);
     }
 
     public function CMSEditLink()
     {
-        $admin = new ServicesAdmin;
-        return Director::absoluteBaseURL() . '/' . $admin->getCMSEditLinkForManagedDataObject($this);
+        $admin = new ServicesAdmin();
+        return Director::absoluteBaseURL() .
+            '/' .
+            $admin->getCMSEditLinkForManagedDataObject($this);
     }
 }

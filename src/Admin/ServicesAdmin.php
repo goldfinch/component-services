@@ -20,16 +20,16 @@ class ServicesAdmin extends ModelAdmin
 
     private static $managed_models = [
         ServiceItem::class => [
-            'title'=> 'Services',
+            'title' => 'Services',
         ],
         ServiceCategory::class => [
-            'title'=> 'Categories',
+            'title' => 'Categories',
         ],
         ServicesBlock::class => [
-            'title'=> 'Blocks',
+            'title' => 'Blocks',
         ],
         ServiceConfig::class => [
-            'title'=> 'Settings',
+            'title' => 'Settings',
         ],
     ];
 }
