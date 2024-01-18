@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Services\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'config:component-services')]
+#[AsCommand(name: 'vendor:component-services:config')]
 class ComponentServicesConfigCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'config:component-services';
+    protected static $defaultName = 'vendor:component-services:config';
 
     protected $description = 'Create component-services config';
 
