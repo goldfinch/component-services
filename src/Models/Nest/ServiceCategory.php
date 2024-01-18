@@ -25,7 +25,7 @@ class ServiceCategory extends NestedObject
         'Items' => ServiceItem::class,
     ];
 
-    public function harvest(Harvest $harvest)
+    public function harvest(Harvest $harvest): void
     {
         $harvest->require(['Title']);
 
