@@ -4,16 +4,16 @@ After: "goldfinch/component-services"
 ---
 Goldfinch\Component\Services\Models\Nest\ServiceItem:
   extensions:
-    - {{ namespace }}\ServiceItemExtension
+    - {{ namespace_root }}ServiceItemExtension
 
 Goldfinch\Component\Services\Models\Nest\ServiceCategory:
   extensions:
-    - {{ namespace }}\ServiceCategoryExtension
+    - {{ namespace_root }}ServiceCategoryExtension
 
 Goldfinch\Component\Services\Configs\ServiceConfig:
   extensions:
-    - {{ namespace }}\ServiceConfigExtension
+    - {{ namespace_root }}ServiceConfigExtension
 
 Goldfinch\Component\Services\Blocks\ServicesBlock:
   extensions:
-    - {{ namespace }}\ServicesBlockExtension
+    - {{ namespace_root }}ServicesBlockExtension
