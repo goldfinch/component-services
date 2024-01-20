@@ -14,10 +14,16 @@ class ServiceConfig extends DataObject implements TemplateGlobalProvider
 
     private static $table_name = 'ServiceConfig';
 
-    private static $db = [];
+    private static $db = [
+        'DisabledCategories' => 'Boolean',
+    ];
 
     public function harvest(Harvest $harvest): void
     {
-        // ..
+        $harvest->fields([
+            'Root.Main' => [
+                $harvest->checkbox('DisabledCategories', 'Disabled categories'),
+            ],
+        ]);
     }
 }

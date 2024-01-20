@@ -9,6 +9,7 @@ use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Harvest\Traits\HarvestTrait;
 use Goldfinch\Component\Services\Admin\ServicesAdmin;
 use Goldfinch\Component\Services\Pages\Nest\Services;
+use Goldfinch\Component\Services\Configs\ServiceConfig;
 
 class ServiceItem extends NestedObject
 {
@@ -58,6 +59,12 @@ class ServiceItem extends NestedObject
         ]);
 
         $harvest->dataField('Image')->setFolderName('projects');
+
+        $cfg = ServiceConfig::current_config();
+
+        if ($cfg->DisabledCategories) {
+            $harvest->remove('Categories');
+        }
     }
 
     public function getNextItem()
