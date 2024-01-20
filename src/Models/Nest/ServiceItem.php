@@ -24,7 +24,9 @@ class ServiceItem extends NestedObject
     private static $singular_name = 'service';
     private static $plural_name = 'services';
 
-    private static $db = [];
+    private static $db = [
+        'Content' => 'HTMLText',
+    ];
 
     private static $many_many = [
         'Categories' => ServiceCategory::class,
@@ -53,6 +55,7 @@ class ServiceItem extends NestedObject
         $harvest->fields([
             'Root.Main' => [
                 $harvest->string('Title'),
+                $harvest->html('Content'),
                 $harvest->tag('Categories'),
                 ...$harvest->media('Image'),
             ],
