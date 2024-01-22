@@ -5,18 +5,18 @@ namespace Goldfinch\Component\Services\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-services:ext:block')]
-class ServicesBlockExtensionCommand extends GeneratorCommand
+#[AsCommand(name: 'vendor:component-services:ext:controller')]
+class ServicesControllerExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-services:ext:block';
+    protected static $defaultName = 'vendor:component-services:ext:controller';
 
-    protected $description = 'Create ServicesBlock extension';
+    protected $description = 'Create ServicesController extension';
 
     protected $path = '[psr4]/Extensions';
 
-    protected $type = 'component-services block extension';
+    protected $type = 'extension';
 
-    protected $stub = './stubs/servicesblock-extension.stub';
+    protected $stub = './stubs/servicescontroller-extension.stub';
 
     protected $prefix = 'Extension';
 

@@ -1,0 +1,34 @@
+---
+Name: app-{{ class }}
+After: "goldfinch/component-services"
+---
+Goldfinch\Component\Services\Admin\ServicesAdmin:
+  # menu_icon_class: ""
+  extensions:
+    - {{ namespace_root_extensions }}ServicesAdminExtension
+
+Goldfinch\Component\Services\Pages\Nest\Services:
+  # icon_class: ""
+  extensions:
+    - {{ namespace_root_extensions }}ServicesExtension
+
+Goldfinch\Component\Services\Controllers\Nest\ServicesController:
+  extensions:
+    - {{ namespace_root_extensions }}ServicesControllerExtension
+
+Goldfinch\Component\Services\Configs\ServiceConfig:
+  extensions:
+    - {{ namespace_root_extensions }}ServiceConfigExtension
+
+Goldfinch\Component\Services\Blocks\ServicesBlock:
+  # icon: ""
+  extensions:
+    - {{ namespace_root_extensions }}ServicesBlockExtension
+
+Goldfinch\Component\Services\Models\Nest\ServiceItem:
+  extensions:
+    - {{ namespace_root_extensions }}ServiceItemExtension
+
+Goldfinch\Component\Services\Models\Nest\ServiceCategory:
+  extensions:
+    - {{ namespace_root_extensions }}ServiceCategoryExtension

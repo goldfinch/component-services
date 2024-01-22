@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Services\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-services:serviceitem')]
+#[AsCommand(name: 'vendor:component-services:ext:item')]
 class ServiceItemExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-services:serviceitem';
+    protected static $defaultName = 'vendor:component-services:ext:item';
 
     protected $description = 'Create ServiceItem extension';
 
@@ -16,7 +16,7 @@ class ServiceItemExtensionCommand extends GeneratorCommand
 
     protected $type = 'component-services item extension';
 
-    protected $stub = 'serviceitem-extension.stub';
+    protected $stub = './stubs/serviceitem-extension.stub';
 
     protected $prefix = 'Extension';
 

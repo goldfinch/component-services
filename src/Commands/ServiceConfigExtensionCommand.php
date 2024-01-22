@@ -5,10 +5,10 @@ namespace Goldfinch\Component\Services\Commands;
 use Goldfinch\Taz\Console\GeneratorCommand;
 use Symfony\Component\Console\Command\Command;
 
-#[AsCommand(name: 'vendor:component-services:serviceconfig')]
+#[AsCommand(name: 'vendor:component-services:ext:config')]
 class ServiceConfigExtensionCommand extends GeneratorCommand
 {
-    protected static $defaultName = 'vendor:component-services:serviceconfig';
+    protected static $defaultName = 'vendor:component-services:ext:config';
 
     protected $description = 'Create ServiceConfig extension';
 
@@ -16,7 +16,7 @@ class ServiceConfigExtensionCommand extends GeneratorCommand
 
     protected $type = 'component-services config extension';
 
-    protected $stub = 'serviceconfig-extension.stub';
+    protected $stub = './stubs/serviceconfig-extension.stub';
 
     protected $prefix = 'Extension';
 
