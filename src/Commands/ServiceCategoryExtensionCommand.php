@@ -14,7 +14,7 @@ class ServiceCategoryExtensionCommand extends GeneratorCommand
 
     protected $path = '[psr4]/Extensions';
 
-    protected $type = 'component-services category extension';
+    protected $type = 'extension';
 
     protected $stub = './stubs/servicecategory-extension.stub';
 
