@@ -2,15 +2,15 @@
 
 namespace Goldfinch\Component\Services\Blocks;
 
-use Goldfinch\Harvest\Harvest;
-use Goldfinch\Harvest\Traits\HarvestTrait;
+use Goldfinch\Fielder\Fielder;
+use Goldfinch\Fielder\Traits\FielderTrait;
 use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Services\Models\Nest\ServiceItem;
 use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 
 class ServicesBlock extends BaseElement
 {
-    use HarvestTrait;
+    use FielderTrait;
 
     private static $table_name = 'ServicesBlock';
     private static $singular_name = 'Services';
@@ -22,7 +22,7 @@ class ServicesBlock extends BaseElement
     private static $description = '';
     private static $icon = 'font-icon-block-bookmark';
 
-    public function harvest(Harvest $harvest): void
+    public function fielder(Fielder $fielder): void
     {
         // ..
     }
