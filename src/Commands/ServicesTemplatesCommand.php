@@ -12,6 +12,8 @@ class ServicesTemplatesCommand extends GeneratorCommand
 
     protected $description = 'Publish [goldfinch/component-services] templates';
 
+    protected $no_arguments = true;
+
     protected function execute($input, $output): int
     {
         $templater = Templater::create($input, $output, $this, 'goldfinch/component-services');
