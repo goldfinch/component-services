@@ -29,6 +29,10 @@ class ServiceCategory extends NestedObject
         'Items' => ServiceItem::class,
     ];
 
+    private static $searchableListFields = [
+        'Title', 'Content',
+    ];
+
     public function fielder(Fielder $fielder): void
     {
         $fielder->require(['Title']);
