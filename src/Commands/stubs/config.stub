@@ -13,8 +13,8 @@ Goldfinch\Component\Services\Pages\Nest\Services:
   extensions:
     - {{ namespace_root_extensions }}ServicesExtension
 
-Goldfinch\Component\Services\Pages\Nest\ServicesByCategory:
-  # icon_class: ""
+# Goldfinch\Component\Services\Pages\Nest\ServicesByCategory:
+#   icon_class: ""
 
 Goldfinch\Component\Services\Controllers\Nest\ServicesController:
   extensions:
