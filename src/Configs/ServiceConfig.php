@@ -3,8 +3,8 @@
 namespace Goldfinch\Component\Services\Configs;
 
 use Goldfinch\Fielder\Fielder;
-use SilverStripe\ORM\DataObject;
 use JonoM\SomeConfig\SomeConfig;
+use SilverStripe\ORM\DataObject;
 use Goldfinch\Fielder\Traits\FielderTrait;
 use SilverStripe\View\TemplateGlobalProvider;
 

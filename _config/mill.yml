@@ -1,0 +1,10 @@
+---
+Name: goldfinch-component-services-mill
+After: "goldfinch/mill"
+---
+Goldfinch\Mill\Mill:
+  millable:
+    Goldfinch\Component\Services\Mills\ServicesMill: Goldfinch\Component\Services\Pages\Nest\Services
+    Goldfinch\Component\Services\Mills\ServicesByCategoryMill: Goldfinch\Component\Services\Pages\Nest\ServicesByCategory
+    Goldfinch\Component\Services\Mills\ServiceCategoryMill: Goldfinch\Component\Services\Models\Nest\ServiceCategory
+    Goldfinch\Component\Services\Mills\ServiceItemMill: Goldfinch\Component\Services\Models\Nest\ServiceItem

@@ -1,0 +1,20 @@
+---
+Name: goldfinch-component-services-loadable
+After: "goldfinch/loadable"
+---
+Goldfinch\Loadable\Loadable:
+  loadable:
+    Goldfinch\Component\Services\Models\Nest\ServiceItem:
+      initial_loaded: 10
+      per_each_load: 10
+    Goldfinch\Component\Services\Models\Nest\ServiceCategory:
+      initial_loaded: 10
+      per_each_load: 10
+
+Goldfinch\Component\Services\Models\Nest\ServiceItem:
+  extensions:
+    - Goldfinch\Loadable\Extensions\LoadableExtension
+
+Goldfinch\Component\Services\Models\Nest\ServiceCategory:
+  extensions:
+    - Goldfinch\Loadable\Extensions\LoadableExtension

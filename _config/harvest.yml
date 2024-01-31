@@ -1,0 +1,7 @@
+---
+Name: goldfinch-component-services-harvest
+After: "goldfinch/harvest"
+---
+Goldfinch\Harvest\Harvest:
+  harvesters:
+    services: Goldfinch\Component\Services\Harvest\ServicesHarvest
