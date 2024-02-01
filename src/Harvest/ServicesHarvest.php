@@ -25,7 +25,7 @@ class ServicesHarvest extends Harvest
 
         ServiceCategory::mill(5)->make();
 
-        ServiceItem::mill(20)->make()->each(function($item) {
+        ServiceItem::mill(30)->make()->each(function($item) {
             $categories = ServiceCategory::get()->shuffle()->limit(rand(0,4));
 
             foreach ($categories as $category) {

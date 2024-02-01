@@ -8,6 +8,7 @@ use SilverStripe\ORM\PaginatedList;
 use SilverStripe\Control\Controller;
 use Goldfinch\Nest\Models\NestedObject;
 use Goldfinch\Fielder\Traits\FielderTrait;
+use Goldfinch\Component\Services\Configs\ServiceConfig;
 use Goldfinch\Component\Services\Pages\Nest\ServicesByCategory;
 
 class ServiceCategory extends NestedObject
@@ -56,7 +57,9 @@ class ServiceCategory extends NestedObject
         if (Controller::has_curr()) {
             $ctrl = Controller::curr();
 
-            return PaginatedList::create($this->Items(), $ctrl->getRequest()); // ->setPageLength(10);
+            $cfg = ServiceConfig::current_config();
+
+            return PaginatedList::create($this->Items(), $ctrl->getRequest())->setPageLength($cfg->ItemsPerPage ?? 10);
         }
     }
 
