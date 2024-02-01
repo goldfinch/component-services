@@ -8,3 +8,4 @@ Goldfinch\Mill\Mill:
     Goldfinch\Component\Services\Mills\ServicesByCategoryMill: Goldfinch\Component\Services\Pages\Nest\ServicesByCategory
     Goldfinch\Component\Services\Mills\ServiceCategoryMill: Goldfinch\Component\Services\Models\Nest\ServiceCategory
     Goldfinch\Component\Services\Mills\ServiceItemMill: Goldfinch\Component\Services\Models\Nest\ServiceItem
+    Goldfinch\Component\Services\Mills\ServicesBlockMill: Goldfinch\Component\Services\Blocks\ServicesBlock

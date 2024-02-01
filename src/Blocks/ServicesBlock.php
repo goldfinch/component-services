@@ -3,6 +3,7 @@
 namespace Goldfinch\Component\Services\Blocks;
 
 use Goldfinch\Fielder\Fielder;
+use Goldfinch\Mill\Traits\Millable;
 use Goldfinch\Fielder\Traits\FielderTrait;
 use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Services\Models\Nest\ServiceItem;
@@ -10,7 +11,7 @@ use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 
 class ServicesBlock extends BaseElement
 {
-    use FielderTrait;
+    use FielderTrait, Millable;
 
     private static $table_name = 'ServicesBlock';
     private static $singular_name = 'Services';
