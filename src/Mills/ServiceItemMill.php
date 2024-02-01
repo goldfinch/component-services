@@ -9,7 +9,7 @@ class ServiceItemMill extends Mill
     public function factory(): array
     {
         return [
-            'Title' => $this->faker->sentence(5),
+            'Title' => $this->faker->catchPhrase(),
             'Content' => $this->faker->paragraph(10),
         ];
     }

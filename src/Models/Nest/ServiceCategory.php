@@ -29,7 +29,11 @@ class ServiceCategory extends NestedObject
         'Items' => ServiceItem::class,
     ];
 
-    private static $searchableListFields = [
+    private static $summary_fields = [
+        'Items.Count' => 'Services',
+    ];
+
+    private static $searchable_list_fields = [
         'Title', 'Content',
     ];
 
