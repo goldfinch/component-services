@@ -17,57 +17,32 @@ class ServicesSetCommand extends GeneratorCommand
 
     protected function execute($input, $output): int
     {
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:admin',
-        );
-        $input = new ArrayInput(['name' => 'ServicesAdmin']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:admin');
+        $command->run(new ArrayInput(['name' => 'ServicesAdmin']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:config',
-        );
-        $input = new ArrayInput(['name' => 'ServiceConfig']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:config');
+        $command->run(new ArrayInput(['name' => 'ServiceConfig']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:block',
-        );
-        $input = new ArrayInput(['name' => 'ServicesBlock']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:block');
+        $command->run(new ArrayInput(['name' => 'ServicesBlock']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:page',
-        );
-        $input = new ArrayInput(['name' => 'Services']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:page');
+        $command->run(new ArrayInput(['name' => 'Services']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:controller',
-        );
-        $input = new ArrayInput(['name' => 'ServicesController']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:controller');
+        $command->run(new ArrayInput(['name' => 'ServicesController']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:item',
-        );
-        $input = new ArrayInput(['name' => 'ServiceItem']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:item');
+        $command->run(new ArrayInput(['name' => 'ServiceItem']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:ext:category',
-        );
-        $input = new ArrayInput(['name' => 'ServiceCategory']);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:ext:category');
+        $command->run(new ArrayInput(['name' => 'ServiceCategory']), $output);
 
         $command = $this->getApplication()->find('vendor:component-services:config');
-        $input = new ArrayInput(['name' => 'component-services']);
-        $command->run($input, $output);
+        $command->run(new ArrayInput(['name' => 'component-services']), $output);
 
-        $command = $this->getApplication()->find(
-            'vendor:component-services:templates',
-        );
-        $input = new ArrayInput([]);
-        $command->run($input, $output);
+        $command = $this->getApplication()->find('vendor:component-services:templates');
+        $command->run(new ArrayInput([]), $output);
 
         return Command::SUCCESS;
     }
