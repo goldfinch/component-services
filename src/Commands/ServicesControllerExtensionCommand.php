@@ -17,5 +17,5 @@ class ServicesControllerExtensionCommand extends GeneratorCommand
 
     protected $stub = './stubs/servicescontroller-extension.stub';
 
-    protected $prefix = 'Extension';
+    protected $suffix = 'Extension';
 }

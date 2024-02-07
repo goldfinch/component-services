@@ -17,5 +17,5 @@ class ServicesBlockExtensionCommand extends GeneratorCommand
 
     protected $stub = './stubs/servicesblock-extension.stub';
 
-    protected $prefix = 'Extension';
+    protected $suffix = 'Extension';
 }
