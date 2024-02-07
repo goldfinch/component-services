@@ -3,7 +3,6 @@
 namespace Goldfinch\Component\Services\Commands;
 
 use Goldfinch\Taz\Console\GeneratorCommand;
-use Symfony\Component\Console\Command\Command;
 
 #[AsCommand(name: 'vendor:component-services:ext:controller')]
 class ServicesControllerExtensionCommand extends GeneratorCommand
@@ -19,11 +18,4 @@ class ServicesControllerExtensionCommand extends GeneratorCommand
     protected $stub = './stubs/servicescontroller-extension.stub';
 
     protected $prefix = 'Extension';
-
-    protected function execute($input, $output): int
-    {
-        parent::execute($input, $output);
-
-        return Command::SUCCESS;
-    }
 }
