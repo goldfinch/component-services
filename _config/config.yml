@@ -4,6 +4,10 @@ Name: goldfinch-component-services
 Goldfinch\Component\Services\Admin\ServicesAdmin:
   extensions:
     - Goldfinch\Helpers\Extensions\BlocksAdminExtension
+
+Goldfinch\Component\Services\Blocks\ServicesBlock:
+  extensions:
+    - Goldfinch\Helpers\Extensions\BaseElementExtension
 ---
 Name: goldfinch-component-services-icon
 Only:

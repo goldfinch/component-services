@@ -2,11 +2,11 @@
 
 namespace Goldfinch\Component\Services\Blocks;
 
-use Goldfinch\Blocks\Models\BlockElement;
+use DNADesign\Elemental\Models\BaseElement;
 use Goldfinch\Component\Services\Models\Nest\ServiceItem;
 use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 
-class ServicesBlock extends BlockElement
+class ServicesBlock extends BaseElement
 {
     private static $table_name = 'ServicesBlock';
     private static $singular_name = 'Services';
@@ -15,7 +15,7 @@ class ServicesBlock extends BlockElement
     private static $db = [];
 
     private static $inline_editable = false;
-    private static $description = '';
+    private static $description = 'Services block handler';
     private static $icon = 'font-icon-block-bookmark';
 
     public function Items()
