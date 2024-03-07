@@ -2,10 +2,8 @@
 
 namespace Goldfinch\Component\Services\Pages\Nest;
 
-use Goldfinch\Fielder\Fielder;
 use Goldfinch\Nest\Pages\Nest;
 use Goldfinch\Mill\Traits\Millable;
-use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Services\Models\Nest\ServiceItem;
 use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 use Goldfinch\Component\Services\Pages\Nest\ServicesByCategory;
@@ -13,7 +11,7 @@ use Goldfinch\Component\Services\Controllers\Nest\ServicesController;
 
 class Services extends Nest
 {
-    use FielderTrait, Millable;
+    use Millable;
 
     private static $table_name = 'Services';
 
@@ -27,14 +25,26 @@ class Services extends Nest
         'NestedObject' => ServiceItem::class,
     ];
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         // ..
+
+        return $fields;
     }
 
-    public function fielderSettings(Fielder $fielder): void
+    public function getSettingsFields()
     {
+        $fields = parent::getSettingsFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->disable(['NestedObject', 'NestedPseudo']);
+
+        return $fields;
     }
 
     protected function onBeforeWrite()

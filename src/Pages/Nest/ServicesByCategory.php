@@ -2,16 +2,14 @@
 
 namespace Goldfinch\Component\Services\Pages\Nest;
 
-use Goldfinch\Fielder\Fielder;
 use Goldfinch\Nest\Pages\Nest;
 use Goldfinch\Mill\Traits\Millable;
-use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 use Goldfinch\Component\Services\Controllers\Nest\ServicesByCategoryController;
 
 class ServicesByCategory extends Nest
 {
-    use FielderTrait, Millable;
+    use Millable;
 
     private static $table_name = 'ServicesByCategory';
 
@@ -25,18 +23,28 @@ class ServicesByCategory extends Nest
 
     private static $description = 'Nested pseudo page, to display individual categories. Can only be added within Services page as a child page';
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->remove([
             'Content',
             'MenuTitle',
         ]);
 
         $fielder->description('Title', 'Does not show up anywhere except SiteTree in the CMS');
+
+        return $fields;
     }
 
-    public function fielderSettings(Fielder $fielder): void
+    public function getSettingsFields()
     {
+        $fields = parent::getSettingsFields();
+
+        $fielder = $fields->fielder($this);
+
         if ($this->NestedPseudo) {
             $fielder->removeFieldsInTab('Root.Search');
             $fielder->removeFieldsInTab('Root.General');
@@ -44,6 +52,8 @@ class ServicesByCategory extends Nest
         }
 
         $fielder->disable(['NestedObject']); // NestedPseudo
+
+        return $fields;
     }
 
     protected function onBeforeWrite()

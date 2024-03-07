@@ -2,14 +2,12 @@
 
 namespace Goldfinch\Component\Services\Models\Nest;
 
-use Goldfinch\Fielder\Fielder;
 use SilverStripe\Assets\Image;
 use SilverStripe\ORM\DataList;
 use SilverStripe\Control\Director;
 use Goldfinch\Mill\Traits\Millable;
 use SilverStripe\Control\HTTPRequest;
 use Goldfinch\Nest\Models\NestedObject;
-use Goldfinch\Fielder\Traits\FielderTrait;
 use Goldfinch\Component\Services\Admin\ServicesAdmin;
 use Goldfinch\Component\Services\Pages\Nest\Services;
 use Goldfinch\Component\Services\Configs\ServiceConfig;
@@ -18,7 +16,7 @@ use Goldfinch\Component\Services\Models\Nest\ServiceCategory;
 
 class ServiceItem extends NestedObject
 {
-    use FielderTrait, Millable;
+    use Millable;
 
     public static $nest_up = null;
     public static $nest_up_children = [];
@@ -79,8 +77,12 @@ class ServiceItem extends NestedObject
         return $fields;
     }
 
-    public function fielder(Fielder $fielder): void
+    public function getCMSFields()
     {
+        $fields = parent::getCMSFields();
+
+        $fielder = $fields->fielder($this);
+
         $fielder->required(['Title']);
 
         $fielder->fields([
@@ -99,6 +101,8 @@ class ServiceItem extends NestedObject
         if ($cfg->DisabledCategories) {
             $fielder->remove('Categories');
         }
+
+        return $fields;
     }
 
     // type : mix | inside | outside
