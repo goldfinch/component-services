@@ -53,6 +53,8 @@ class ServiceCategory extends NestedObject
             ],
         ]);
 
+        $this->extend('updateCMSFields', $fields);
+
         return $fields;
     }
 

@@ -36,6 +36,8 @@ class ServicesByCategory extends Nest
 
         $fielder->description('Title', 'Does not show up anywhere except SiteTree in the CMS');
 
+        $this->extend('updateCMSFields', $fields);
+
         return $fields;
     }
 
@@ -52,6 +54,8 @@ class ServicesByCategory extends Nest
         }
 
         $fielder->disable(['NestedObject']); // NestedPseudo
+
+        $this->extend('updateSettingsFields', $fields);
 
         return $fields;
     }

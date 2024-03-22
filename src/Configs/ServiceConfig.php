@@ -46,6 +46,8 @@ class ServiceConfig extends DataObject implements TemplateGlobalProvider
             }]);
         }
 
+        $this->extend('updateCMSFields', $fields);
+
         return $fields;
     }
 }
